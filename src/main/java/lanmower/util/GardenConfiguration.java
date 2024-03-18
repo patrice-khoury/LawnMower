@@ -1,7 +1,7 @@
 package lanmower.util;
 
 import lanmower.domain.Garden;
-import lanmower.service.LawnInstructions;
+import lanmower.domain.LawnInstructions;
 
 import java.util.List;
 

@@ -4,7 +4,7 @@ import lanmower.domain.Command;
 import lanmower.domain.Garden;
 import lanmower.domain.Orientation;
 import lanmower.domain.Position;
-import lanmower.service.LawnInstructions;
+import lanmower.domain.LawnInstructions;
 import org.junit.jupiter.api.Test;
 
 import java.io.File;
@@ -81,7 +81,7 @@ class GardenUtilsTest {
         assertThat(instructions).hasSize(1);
         final LawnInstructions instruction = instructions.getFirst();
 
-        final Position position = instruction.getLawnMower().getPosition();
+        final Position position = instruction.getPosition();
         assertThat(position).extracting(
                         Position::getX,
                         Position::getY,

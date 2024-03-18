@@ -1,7 +1,10 @@
 package lanmower.util;
 
-import lanmower.domain.*;
-import lanmower.service.LawnInstructions;
+import lanmower.domain.Command;
+import lanmower.domain.Garden;
+import lanmower.domain.Orientation;
+import lanmower.domain.Position;
+import lanmower.domain.LawnInstructions;
 import org.apache.commons.io.FileUtils;
 
 import java.io.File;
@@ -28,7 +31,7 @@ public class GardenUtils {
             final Position position = parsePosition(configurations.get(i));
             final List<Command> commands = parseCommands(configurations.get(i + 1));
 
-            final LawnInstructions instruction = new LawnInstructions(new LawnMower(position), commands);
+            final LawnInstructions instruction = new LawnInstructions(position, commands);
 
             instructions.add(instruction);
         }
